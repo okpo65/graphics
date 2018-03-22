@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CS580"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ExternalProjects\;CMake Files\ExternalProjects\cmake-modules-master\;CMake Files\ExternalProjects\cmake-modules-master\launcher-templates\;CMake Files\ExternalProjects\glfw-3.0.3\;CMake Files\ExternalProjects\glfw-3.0.3\docs\;CMake Files\ExternalProjects\glfw-3.0.3\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SkeletonProject">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/SkeletonProject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glm-0.9.4.0"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glew-1.9.0/include"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 SkeletonProject"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SkeletonProject/fast">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/SkeletonProject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glm-0.9.4.0"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glew-1.9.0/include"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 SkeletonProject/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLEW_190">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/libGLEW_190.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glew-1.9.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 GLEW_190"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLEW_190/fast">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/libGLEW_190.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glew-1.9.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 GLEW_190/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLFW_303">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 GLFW_303"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLFW_303/fast">
+				<Option output="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTW_STATIC"/>
+					<Add option="-DTW_NO_LIB_PRAGMA"/>
+					<Add option="-DTW_NO_DIRECT3D"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-D_CRT_SECURE_NO_WARNINGS"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src"/>
+					<Add directory="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 GLFW_303/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glew-1.9.0/src/glew.c">
+			<Option target="GLEW_190"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW/glfw3.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/include/GLFW/glfw3native.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/clipboard.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_clipboard.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_gamma.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_init.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_joystick.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_monitor.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_platform.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_time.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/cocoa_window.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/context.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/gamma.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/init.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/input.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/internal.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/joystick.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/monitor.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/nsgl_context.m">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/nsgl_platform.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/time.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/window.c">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/Skeleton/FragmentShader.glsl">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/Skeleton/VertexShader.glsl">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/Skeleton/main.cpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/cmake-build-debug/ExternalProjects/glfw-3.0.3/src/config.h">
+			<Option target="GLFW_303"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/affine.hpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/geometry.hpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/model.cpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/model.hpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/shader.cpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/common/shader.hpp">
+			<Option target="SkeletonProject"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ExternalProjects\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/cmake-modules-master/CreateLaunchers.cmake">
+			<Option virtualFolder="CMake Files\ExternalProjects\cmake-modules-master\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/cmake-modules-master/CleanDirectoryList.cmake">
+			<Option virtualFolder="CMake Files\ExternalProjects\cmake-modules-master\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/cmake-modules-master/MSVCMultipleProcessCompile.cmake">
+			<Option virtualFolder="CMake Files\ExternalProjects\cmake-modules-master\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/cmake-modules-master/FindGDB.cmake">
+			<Option virtualFolder="CMake Files\ExternalProjects\cmake-modules-master\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/cmake-modules-master/launcher-templates/targetlauncher.sh.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\cmake-modules-master\launcher-templates\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/docs/Doxyfile.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\docs\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/docs/Doxyfile.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\docs\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/config.h.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfwConfig.cmake.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfwConfigVersion.cmake.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/config.h.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfwConfig.cmake.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfwConfigVersion.cmake.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+		<Unit filename="/Users/jihwanmac/Desktop/Homework1_4/ExternalProjects/glfw-3.0.3/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ExternalProjects\glfw-3.0.3\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
