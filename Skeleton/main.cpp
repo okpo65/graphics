@@ -188,71 +188,86 @@ int main(void) {
     // initialize directional light
     vec3 dir_light = vec3(0.0f, -1.0f, 1.0f);
 
-    Model cube = Model();
-    InitDataCube(cube, vec3(0.0f, 1.0f, 0.0f));
-    cube.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-    cube.SetProjection(&g_projection);
-    cube.SetEyeRbt(&g_eye_rbt);
+    Model cube1 = Model();
+    InitDataCube(cube1, vec3(0.0f, 1.0f, 0.0f));
+    cube1.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+    cube1.SetProjection(&g_projection);
+    cube1.SetEyeRbt(&g_eye_rbt);
 
-    mat4 cube_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
-    g_model_rbts.push_back(cube_rbt);
-    cube.SetModelRbt(&cube_rbt);
-    cube.SetDirectionalLight(dir_light);
-    cube.SetModelId(0);
-    g_models.push_back(cube);
+    mat4 cube1_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
 
-    Model another_cube = Model();
-    InitDataCube(another_cube, vec3(1.0f, 0.0f, 0.0f));
-    another_cube.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-    another_cube.SetProjection(&g_projection);
-    another_cube.SetEyeRbt(&g_eye_rbt);
+    cube1.SetModelRbt(&cube1_rbt);
+    cube1.SetDirectionalLight(dir_light);
+    cube1.SetModelId(2);
+    g_models.push_back(cube1);
+    g_model_rbts.push_back(cube1_rbt);
 
-    mat4 another_cube_rbt = translate(g_world_rbt, vec3(1.5f, 0.0f, 0.0f));
-    g_model_rbts.push_back(another_cube_rbt);
-    another_cube.SetDirectionalLight(dir_light);
-    another_cube.SetModelId(1);
-    g_models.push_back(another_cube);
+    Model cube2 = Model();
+    InitDataCube(cube2, vec3(0.3f, 0.3f, 0.3f));
+    cube2.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+    cube2.SetProjection(&g_projection);
+    cube2.SetEyeRbt(&g_eye_rbt);
+
+    mat4 cube2_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
+    g_model_rbts.push_back(cube2_rbt);
+    cube2.SetModelRbt(&cube1_rbt);
+    cube2.SetDirectionalLight(dir_light);
+    cube2.SetModelId(4);
+    g_models.push_back(cube2);
 
     Model cube3 = Model();
-    InitDataCube(cube3, vec3(1.0f, 0.0f, 1.0f));
+    InitDataCube(cube3, vec3(0.2f, 0.5f, 0.3f));
     cube3.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
     cube3.SetProjection(&g_projection);
     cube3.SetEyeRbt(&g_eye_rbt);
 
-    mat4 cube3_rbt = translate(g_world_rbt, vec3(2.0f, 0.0f, 0.0f));
+    mat4 cube3_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
     g_model_rbts.push_back(cube3_rbt);
+    cube3.SetModelRbt(&cube1_rbt);
     cube3.SetDirectionalLight(dir_light);
-    cube3.SetModelId(1);
+    cube3.SetModelId(6);
     g_models.push_back(cube3);
 
-    Model column = Model();
-    InitDataTriangle(column, vec3(1.0,1.0,0));
-    column.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+    Model pyramid1 = Model();
+    InitDataTriangle(pyramid1, vec3(1.0,0.0,0));
+    pyramid1.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 
-    column.SetProjection(&g_projection);
-    column.SetEyeRbt(&g_eye_rbt);
+    pyramid1.SetProjection(&g_projection);
+    pyramid1.SetEyeRbt(&g_eye_rbt);
 
-    mat4 column_rbt = translate(g_world_rbt, vec3(2.0f, 5.0f, 0.0f));
-    column.SetModelRbt(&column_rbt);
-    column.SetDirectionalLight(dir_light);
-    column.SetModelId(3);
+    mat4 pyramid1_rbt = translate(g_world_rbt, vec3(2.0f, 5.0f, 0.0f));
+    pyramid1.SetModelRbt(&pyramid1_rbt);
+    pyramid1.SetDirectionalLight(dir_light);
+    pyramid1.SetModelId(1);
+    g_models.push_back(pyramid1);
+    g_model_rbts.push_back(pyramid1_rbt);
 
+    Model pyramid2 = Model();
+    InitDataTriangle(pyramid2, vec3(0.2,1.0,0.3));
+    pyramid2.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 
-    Sphere sphere = Sphere();
-    mat4 sphere_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
-    sphere.SetModelId(0);
-    sphere.init(0);
-    sphere.SetProjection(&g_projection);
-    sphere.SetEyeRbt(&g_eye_rbt);
-    sphere.SetModelRbt(&sphere_rbt);
-    sphere.SetDirectionalLight(dir_light);
-    std::shared_ptr<Sphere> root;
-    std::shared_ptr<Sphere> child1;
+    pyramid2.SetProjection(&g_projection);
+    pyramid2.SetEyeRbt(&g_eye_rbt);
 
+    mat4 pyramid2_rbt = translate(g_world_rbt, vec3(2.0f, 5.0f, 0.0f));
+    pyramid2.SetModelRbt(&pyramid2_rbt);
+    pyramid2.SetDirectionalLight(dir_light);
+    pyramid2.SetModelId(5);
+    g_models.push_back(pyramid2);
+    g_model_rbts.push_back(pyramid2_rbt);
+
+    Sphere sphere1 = Sphere();
+    mat4 sphere1_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
+    sphere1.SetModelId(0);
+    sphere1.init(0);
+    sphere1.SetProjection(&g_projection);
+    sphere1.SetEyeRbt(&g_eye_rbt);
+    sphere1.SetModelRbt(&sphere1_rbt);
+    sphere1.SetDirectionalLight(dir_light);
 
     Sphere sphere2 = Sphere();
     mat4 sphere_rbt_2 = translate(g_world_rbt, vec3(0.0f, 0.0f, 1.0f));
-    sphere2.SetModelId(1);
+    sphere2.SetModelId(3);
     sphere2.init(0);
 
     sphere2.SetProjection(&g_projection);
@@ -269,17 +284,23 @@ int main(void) {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        another_cube.Draw();
-        column.Draw();
-        sphere.draw();
+        sphere1.Draw();
 
-        cube.SetParentModelMatrix(another_cube.GetModelMatrix());
-        cube.Draw();
-        sphere2.SetParentModelMatrix(cube.GetModelMatrix());
-        sphere2.draw();
+        pyramid1.SetParentModelMatrix(sphere1.GetModelMatrix());
+        pyramid1.Draw();
+        cube1.SetParentModelMatrix(sphere1.GetModelMatrix());
+        cube1.Draw();
 
+        sphere2.SetParentModelMatrix(pyramid1.GetModelMatrix());
+        sphere2.Draw();
+        cube2.SetParentModelMatrix(pyramid1.GetModelMatrix());
+        cube2.Draw();
 
-//        cube3.Draw();
+        pyramid2.SetParentModelMatrix(cube1.GetModelMatrix());
+        pyramid2.Draw();
+        cube3.SetParentModelMatrix(cube1.GetModelMatrix());
+        cube3.Draw();
+
 
 
         glfwSwapBuffers(g_window);
@@ -291,7 +312,8 @@ int main(void) {
 
     // Cleanup all resources
     CleanUp();
-    sphere.cleanup();
+    sphere1.cleanup();
+    sphere2.cleanup();
     // Close OpenGL window and terminate GLFW
     glfwTerminate();
 

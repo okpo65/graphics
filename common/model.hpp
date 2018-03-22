@@ -115,7 +115,7 @@ public:
 	double lastFrameTime = lastTime;
 	void init(GLuint vertexPositionID);
 	void cleanup();
-	void draw();
+	void Draw();
 	void SetProjection(mat4* p_projection);
 	// Set pointer of camera rigid-body matrix for this model
 	void SetEyeRbt(mat4* p_eye_rbt);

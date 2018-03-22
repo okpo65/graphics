@@ -28,11 +28,23 @@ vec3 vertices_triangle[] = {
 //		vec3(1, 0, 1),
 //		vec3(0, 1, 1)
 
-		vec3(-0.5,0,0.5),
-		vec3(0.5,0,0.5),
-		vec3(0.5,0,-0.5),
-		vec3(-0.5,0,-0.5),
-		vec3(0,1,0)
+//		vec3(-0.5,0,0.5),
+//		vec3(0.5,0,0.5),
+//		vec3(0.5,0,-0.5),
+//		vec3(-0.5,0,-0.5),
+//		vec3(0,1,0)
+
+//        vec3(-1,-0.5,0),
+//        vec3(0,-0.5,0),
+//        vec3(0,-0.5,-1),
+//        vec3(-1,-0.5,-1),
+//        vec3(-0.5,0.5,-0.5)
+
+		vec3(-0.5,-0.5,0.5),
+		vec3(0.5,-0.5,0.5),
+		vec3(0.5,-0.5,-0.5),
+		vec3(-0.5,-0.5,-0.5),
+		vec3(0,0.5,0)
 
 };
 vec3 vertices_line[] = {
@@ -169,7 +181,7 @@ void InitDataTriangle(Model &a_model, vec3 a_color)
 	Quad_v2(a_model,4,2,3,0,a_color,0);
 	Quad_v2(a_model,4,3,0,0,a_color,0);
 
-	Quad_v2(a_model,3,0,1,2,a_color,1);
+	Quad_v2(a_model,3,2,1,0,a_color,1);
 
 }
 #endif

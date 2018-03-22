@@ -150,28 +150,39 @@ void Model::Draw()
 
 	// Build the model matrix
 	glm::mat4 RotationMatrix = eulerAngleYXZ(gOrientation1.y, gOrientation1.x, gOrientation1.z);
+	glm::mat4 TransformMatrix = m_parent_model_matrix;
+	glm::mat4 ModelMatrix = *m_model_rbt;
+	glm::mat4 ScaleMatrix = glm::scale(0.7f, 0.7f ,0.7f);
+	switch (m_model_id){
+		case 0:
 
-	if (m_model_id == 0){
-		glm::mat4 TransformMatrix = m_parent_model_matrix;
-		glm::mat4 ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-1.5f, 2.0f, -2.0f));
-		m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-1.5f, 2.0f, -2.0f));
-		glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
-	}else if( m_model_id == 1){
-		glm::mat4 ModelMatrix =  RotationMatrix * translate(glm::mat4(), vec3(0.0f, 3.0f, 2.0f));
-		m_model_matrix = translate(RotationMatrix, vec3(0.0f, 3.0f, 2.0f));
-		glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
-	}else if(m_model_id == 2){
-		glm::mat4 TransformMatrix = m_parent_model_matrix * translate(RotationMatrix, vec3(-1.5f, 2.0f, -2.0f));
-		glm::mat4 ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-3.5f, 3.0f, -2.0f));
-		m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-3.5f, 3.0f, -2.0f));
-		glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
-	}else if(m_model_id == 3){
-		glm::mat4 TransformMatrix = m_parent_model_matrix * translate(RotationMatrix, vec3(-1.5f, 2.0f, -2.0f));
-		glm::mat4 ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-2.0f, 2.0f, -2.0f));
-		m_model_matrix = TransformMatrix * translate(glm::mat4(), vec3(-2.0f, 2.0f, -2.0f));
-		glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
+			break;
+		case 1:
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-3.0f, -2.0f, 0.0f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-3.0f, -2.0f, 0.0f));
+			break;
+		case 2:
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(3.0f, -2.0f, 0.0f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(3.0f, -2.0f, 0.0f));
+			break;
+		case 3:
+			break;
+		case 4:
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(1.5f, -2.0f, 0.0f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(1.5f, -2.0f, 0.0f));
+			break;
+		case 5:
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-1.5f, -2.0f, 0.0f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-1.5f, -2.0f, 0.0f));
+			break;
+		case 6:
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(1.5f, -2.0f, 0.0f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(1.5f, -2.0f, 0.0f));
+			break;
+		default:
+			break;
 	}
-//	printf("model id: %d  shader model id: %d\n",m_model_id,model_id);
+	glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
 
 	glBindVertexArray(m_vertex_array_id);
 	glEnableVertexAttribArray(0);
@@ -368,7 +379,7 @@ void Sphere::cleanup()
 }
 
 
-void Sphere::draw()
+void Sphere::Draw()
 {
 	glUseProgram(m_sphereProgramID);
 	GLint projection_id = glGetUniformLocation(m_sphereProgramID, "Projection");
@@ -388,22 +399,27 @@ void Sphere::draw()
 	// Build the model matrix
 
     glm::mat4 RotationMatrix = eulerAngleYXZ(gOrientation1.y, gOrientation1.x, gOrientation1.z);
-    if (s_model_id == 0){
+	glm::mat4 TransformMatrix = s_parent_model_matrix;
+	glm::mat4 ModelMatrix = *s_model_rbt;
+	glm::mat4 scalingMatrix;
+	switch (s_model_id)
+	{
+		case 0:
+			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(0.0f, 8.0f, 0.0f)) * scalingMatrix;
+            s_model_matrix = translate(glm::mat4(), vec3(0.0f, 8.0f, 0.0f));
+			break;
+		case 3:
+			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-1.5f, -2.0f, 0.0f)) * scalingMatrix;
+            s_model_matrix = translate(glm::mat4(), vec3(-1.5f,-2.0f,0.0f));
+			break;
+		default:
+			break;
+	}
+	glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
 
-        glm::mat4 TransformMatrix = glm::translate(glm::mat4(), glm::vec3(3.0f, 3.0f, 0.0f));
-        glm::mat4 scalingMatrix = glm::scale(0.3f, 0.3f ,0.3f);
-        glm::mat4 ModelMatrix =  TransformMatrix * RotationMatrix * scalingMatrix;
-		s_model_matrix = TransformMatrix;
-        glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
-    }else{
-		glm::mat4 TransformMatrix = s_parent_model_matrix;
-        glm::mat4 scalingMatrix = glm::scale(0.15f, 0.15f ,0.15f);
-        glm::mat4 ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(0.0f, 2.0f, 0.0f)) * scalingMatrix;
-        glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
-		s_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-2.0f, 2.0f, 1.0f));
-    }
-
-    glMatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);
 //    glLoadIdentity();
     glMatrixMode(GL_TEXTURE);
 //    glLoadIdentity();
