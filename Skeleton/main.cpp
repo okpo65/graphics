@@ -275,6 +275,54 @@ int main(void) {
     sphere2.SetModelRbt(&sphere_rbt_2);
     sphere2.SetDirectionalLight(dir_light);
 
+
+    ////////////////////////////////////////////////////
+
+
+    Model line1 = Model();
+    Model line2 = Model();
+    Model line3 = Model();
+    Model line4 = Model();
+    Model line5 = Model();
+    Model line6 = Model();
+    Model line7 = Model();
+    Model line8 = Model();
+    Model line9 = Model();
+//    Model line10 = Model();
+//    Model line11 = Model();
+//    Model line12 = Model();
+
+    vector<Model*> lines;
+    lines.push_back(&line1);
+    lines.push_back(&line2);
+    lines.push_back(&line3);
+    lines.push_back(&line4);
+    lines.push_back(&line5);
+    lines.push_back(&line6);
+    lines.push_back(&line7);
+    lines.push_back(&line8);
+    lines.push_back(&line9);
+//    lines.push_back(&line10);
+//    lines.push_back(&line11);
+//    lines.push_back(&line12);
+
+    for(int i=0;i<9;i++){
+        InitDataCube(*lines[i], vec3(0.0f, 1.0f, 0.0f));
+        (*lines[i]).InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+        (*lines[i]).SetProjection(&g_projection);
+        (*lines[i]).SetEyeRbt(&g_eye_rbt);
+
+        mat4 line1_rbt = translate(g_world_rbt, vec3(-1.5f, 0.0f, 0.0f));
+
+        (*lines[i]).SetModelRbt(&line1_rbt);
+        (*lines[i]).SetDirectionalLight(dir_light);
+        (*lines[i]).SetModelId(i+7);
+        g_models.push_back(*lines[i]);
+        g_model_rbts.push_back(line1_rbt);
+    }
+
+    //////////////////////////////////////////////////
+
     do {
         // Clear the screen
         // Fill the background
@@ -301,7 +349,45 @@ int main(void) {
         cube3.SetParentModelMatrix(cube1.GetModelMatrix());
         cube3.Draw();
 
+        /////////////////////////////////////////////////
 
+        line1.SetParentModelMatrix(sphere1.GetModelMatrix());
+        line1.Draw();
+
+        line2.SetParentModelMatrix(pyramid1.GetModelMatrix());
+        line2.Draw();
+
+        line3.SetParentModelMatrix(cube1.GetModelMatrix());
+        line3.Draw();
+
+        line4.SetParentModelMatrix(pyramid1.GetModelMatrix());
+        line4.Draw();
+
+        line5.SetParentModelMatrix(cube1.GetModelMatrix());
+        line5.Draw();
+
+        line6.SetParentModelMatrix(sphere2.GetModelMatrix());
+        line6.Draw();
+
+        line7.SetParentModelMatrix(cube2.GetModelMatrix());
+        line7.Draw();
+
+        line8.SetParentModelMatrix(pyramid2.GetModelMatrix());
+        line8.Draw();
+
+        line9.SetParentModelMatrix(cube3.GetModelMatrix());
+        line9.Draw();
+
+        //line10.SetParentModelMatrix(cube1.GetModelMatrix());
+//        line10.Draw();
+
+        //line11.SetParentModelMatrix(cube1.GetModelMatrix());
+//        line11.Draw();
+
+        //line12.SetParentModelMatrix(cube1.GetModelMatrix());
+//        line4.Draw();
+
+        /////////////////////////////////////////////
 
         glfwSwapBuffers(g_window);
         glfwPollEvents();

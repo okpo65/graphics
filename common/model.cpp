@@ -179,7 +179,15 @@ void Model::Draw()
 			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(1.5f, -2.0f, 0.0f)) * ScaleMatrix;
 			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(1.5f, -2.0f, 0.0f));
 			break;
+
 		default:
+            ScaleMatrix = glm::scale(0.1f, 0.7f ,0.1f);
+
+            if (m_model_id <= 9){
+                ModelMatrix = TransformMatrix * RotationMatrix  * translate(glm::mat4(), vec3(0.0f, -0.5f, 0.0f)) * ScaleMatrix;
+            }else{
+                ModelMatrix = TransformMatrix * RotationMatrix  * translate(glm::mat4(), vec3(0.0f, +0.5f, 0.0f)) * ScaleMatrix;
+            }
 			break;
 	}
 	glUniformMatrix4fv(model_id, 1, GL_FALSE, &(ModelMatrix)[0][0]);
@@ -412,7 +420,8 @@ void Sphere::Draw()
 		case 3:
 			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);
 			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-1.5f, -2.0f, 0.0f)) * scalingMatrix;
-            s_model_matrix = translate(glm::mat4(), vec3(-1.5f,-2.0f,0.0f));
+            s_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-1.5f,-2.0f,0.0f));
+
 			break;
 		default:
 			break;
