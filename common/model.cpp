@@ -158,12 +158,12 @@ void Model::Draw()
 
 			break;
 		case 1:
-			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-3.0f, -2.0f, 0.0f)) * ScaleMatrix;
-			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-3.0f, -2.0f, 0.0f));
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(-3.0f, -2.0f, -0.15f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(-3.0f, -2.0f, -0.15f));
 			break;
 		case 2:
-			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(3.0f, -2.0f, 0.0f)) * ScaleMatrix;
-			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(3.0f, -2.0f, 0.0f));
+			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(3.0f, -2.0f, 0.2f)) * ScaleMatrix;
+			m_model_matrix = TransformMatrix * translate(RotationMatrix, vec3(3.0f, -2.0f, 0.2f));
 			break;
 		case 3:
 			break;
@@ -181,12 +181,21 @@ void Model::Draw()
 			break;
 
 		default:
-            ScaleMatrix = glm::scale(0.1f, 0.7f ,0.1f);
+            ScaleMatrix = glm::scale(0.1f, 0.8f ,0.1f);
 
             if (m_model_id <= 9){
                 ModelMatrix = TransformMatrix * RotationMatrix  * translate(glm::mat4(), vec3(0.0f, -0.5f, 0.0f)) * ScaleMatrix;
-            }else{
+                m_model_matrix = TransformMatrix;
+            }else if (m_model_id <= 15){
                 ModelMatrix = TransformMatrix * RotationMatrix  * translate(glm::mat4(), vec3(0.0f, +0.5f, 0.0f)) * ScaleMatrix;
+                m_model_matrix = TransformMatrix;
+            }else{
+                if(m_model_id == 16) {
+                    ScaleMatrix = glm::scale(6.3f, 0.3f ,0.3f);
+                }else{
+                    ScaleMatrix = glm::scale(3.3f, 0.3f ,0.3f);
+                }
+                ModelMatrix = TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(0.0f, -1.0f, 0.0f)) * ScaleMatrix;
             }
 			break;
 	}

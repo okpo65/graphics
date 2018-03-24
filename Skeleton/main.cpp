@@ -288,9 +288,9 @@ int main(void) {
     Model line7 = Model();
     Model line8 = Model();
     Model line9 = Model();
-//    Model line10 = Model();
-//    Model line11 = Model();
-//    Model line12 = Model();
+    Model line10 = Model();
+    Model line11 = Model();
+    Model line12 = Model();
 
     vector<Model*> lines;
     lines.push_back(&line1);
@@ -302,11 +302,11 @@ int main(void) {
     lines.push_back(&line7);
     lines.push_back(&line8);
     lines.push_back(&line9);
-//    lines.push_back(&line10);
-//    lines.push_back(&line11);
-//    lines.push_back(&line12);
+    lines.push_back(&line10);
+    lines.push_back(&line11);
+    lines.push_back(&line12);
 
-    for(int i=0;i<9;i++){
+    for(int i=0;i<12;i++){
         InitDataCube(*lines[i], vec3(0.0f, 1.0f, 0.0f));
         (*lines[i]).InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
         (*lines[i]).SetProjection(&g_projection);
@@ -378,14 +378,14 @@ int main(void) {
         line9.SetParentModelMatrix(cube3.GetModelMatrix());
         line9.Draw();
 
-        //line10.SetParentModelMatrix(cube1.GetModelMatrix());
-//        line10.Draw();
+        line10.SetParentModelMatrix(line1.GetModelMatrix());
+        line10.Draw();
 
-        //line11.SetParentModelMatrix(cube1.GetModelMatrix());
-//        line11.Draw();
+        line11.SetParentModelMatrix(line2.GetModelMatrix());
+        line11.Draw();
 
-        //line12.SetParentModelMatrix(cube1.GetModelMatrix());
-//        line4.Draw();
+        line12.SetParentModelMatrix(line3.GetModelMatrix());
+        line12.Draw();
 
         /////////////////////////////////////////////
 
