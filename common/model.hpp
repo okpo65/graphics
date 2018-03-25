@@ -71,7 +71,7 @@ public:
 	void InitializeGLSL(DRAW_TYPE a_draw_type, const char * a_vertex_shader_path, const char * a_fragment_shader_path);
 	// Draw function
 	void SetModelId(unsigned int p_model_id);
-	void Draw(void);
+	void Draw(float model_speed_keyboard);
 
 	mat4 GetModelMatrix();
 	void SetParentModelMatrix(mat4 model_matrix);
@@ -115,7 +115,7 @@ public:
 	double lastFrameTime = lastTime;
 	void init(GLuint vertexPositionID);
 	void cleanup();
-	void Draw();
+	void Draw(float model_speed_keyboard,float model_transfer_keyboard[2], float model_transfer_direction);
 	void SetProjection(mat4* p_projection);
 	// Set pointer of camera rigid-body matrix for this model
 	void SetEyeRbt(mat4* p_eye_rbt);

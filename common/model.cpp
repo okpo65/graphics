@@ -129,7 +129,7 @@ void Model::InitializeGLSL(DRAW_TYPE a_draw_type, const char * a_vertex_shader_p
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vec3)*m_colors.size(), &m_colors[0], GL_STATIC_DRAW);
 }
 
-void Model::Draw()
+void Model::Draw(float model_speed_keyboard)
 {
 	glUseProgram(m_glsl_program_id);
 	GLint projection_id = glGetUniformLocation(m_glsl_program_id, "Projection");
@@ -146,8 +146,7 @@ void Model::Draw()
 	lastFrameTime = currentTime;
 
 
-	gOrientation1.y += 3.14159f/2.0f * deltaTime;
-
+	gOrientation1.y += 3.14159f/2.0f * (deltaTime * model_speed_keyboard);
 	// Build the model matrix
 	glm::mat4 RotationMatrix = eulerAngleYXZ(gOrientation1.y, gOrientation1.x, gOrientation1.z);
 	glm::mat4 TransformMatrix = m_parent_model_matrix;
@@ -181,7 +180,7 @@ void Model::Draw()
 			break;
 
 		default:
-            ScaleMatrix = glm::scale(0.1f, 0.8f ,0.1f);
+            ScaleMatrix = glm::scale(0.05f, 0.8f ,0.05f);
 
             if (m_model_id <= 9){
                 ModelMatrix = TransformMatrix * RotationMatrix  * translate(glm::mat4(), vec3(0.0f, -0.5f, 0.0f)) * ScaleMatrix;
@@ -191,9 +190,9 @@ void Model::Draw()
                 m_model_matrix = TransformMatrix;
             }else{
                 if(m_model_id == 16) {
-                    ScaleMatrix = glm::scale(6.3f, 0.3f ,0.3f);
+                    ScaleMatrix = glm::scale(6.3f, 0.2f ,0.2f);
                 }else{
-                    ScaleMatrix = glm::scale(3.3f, 0.3f ,0.3f);
+                    ScaleMatrix = glm::scale(3.3f, 0.2f ,0.2f);
                 }
                 ModelMatrix = TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(0.0f, -1.0f, 0.0f)) * ScaleMatrix;
             }
@@ -396,7 +395,7 @@ void Sphere::cleanup()
 }
 
 
-void Sphere::Draw()
+void Sphere::Draw(float model_speed_keyboard, float model_transfer_keyboard[2], float model_transfer_direction)
 {
 	glUseProgram(m_sphereProgramID);
 	GLint projection_id = glGetUniformLocation(m_sphereProgramID, "Projection");
@@ -411,9 +410,10 @@ void Sphere::Draw()
 
 	lastFrameTime = currentTime;
 
-	gOrientation1.y += 3.14159f/2.0f * deltaTime;
+    gOrientation1.y += 3.14159f/2.0f * (deltaTime * model_speed_keyboard) ;
 
-	// Build the model matrix
+
+    // Build the model matrix
 
     glm::mat4 RotationMatrix = eulerAngleYXZ(gOrientation1.y, gOrientation1.x, gOrientation1.z);
 	glm::mat4 TransformMatrix = s_parent_model_matrix;
@@ -423,8 +423,9 @@ void Sphere::Draw()
 	{
 		case 0:
 			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);
-			ModelMatrix =  TransformMatrix * RotationMatrix * translate(glm::mat4(), vec3(0.0f, 8.0f, 0.0f)) * scalingMatrix;
-            s_model_matrix = translate(glm::mat4(), vec3(0.0f, 8.0f, 0.0f));
+			TransformMatrix = glm::translate(glm::mat4(), glm::vec3(model_transfer_keyboard[1], 8.0f + model_transfer_keyboard[0], 0.0f));
+			ModelMatrix =  TransformMatrix * RotationMatrix * scalingMatrix;
+            s_model_matrix = translate(glm::mat4(), glm::vec3(model_transfer_keyboard[1], 8.0f + model_transfer_keyboard[0], 0.0f));
 			break;
 		case 3:
 			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);

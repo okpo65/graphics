@@ -30,6 +30,10 @@ int g_framebuffer_height = 768;
 float g_fov = 45.f; // 45-degree of fov
 float g_fovy = g_fov; // y-angle of fov
 
+float model_speed_keyboard = 1.0f;
+float model_transfer_keyboard[2] = {0,0};
+int model_transfer_direction = 0;
+
 std::vector<Model> g_models;
 std::vector<mat4> g_model_rbts;
 
@@ -115,7 +119,37 @@ static void KeyboardCallback(GLFWwindow *a_window, int a_key, int a_scancode, in
                 cout << "h\t\t Help command" << endl;
                 cout << "p\t\t Enable/Disable picking" << endl;
                 break;
+            case GLFW_KEY_N:
+                model_speed_keyboard += 0.1;
+                break;
+            case GLFW_KEY_M:
+                model_speed_keyboard -= 0.1;
+                if (model_speed_keyboard < 0){
+                    model_speed_keyboard = 0.05;
+                }
+                break;
+            case GLFW_KEY_R:
+                model_speed_keyboard = 1.0f;    
+                break;
+            case GLFW_KEY_UP:
+                model_transfer_direction = 0;
+                model_transfer_keyboard[0] += 0.1;
+                break;
+            case GLFW_KEY_DOWN:
+                model_transfer_direction = 1;
+                model_transfer_keyboard[0] -= 0.1;
+                break;
+            case GLFW_KEY_LEFT:
+                model_transfer_direction = 2;
+                model_transfer_keyboard[1] -= 0.1;
+                break;
+            case GLFW_KEY_RIGHT:
+                model_transfer_direction = 3;
+                model_transfer_keyboard[1] += 0.1;
+                break;
+
             default:
+
                 break;
         }
     }
@@ -332,60 +366,60 @@ int main(void) {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        sphere1.Draw();
+        sphere1.Draw(model_speed_keyboard,model_transfer_keyboard,model_transfer_direction);
 
         pyramid1.SetParentModelMatrix(sphere1.GetModelMatrix());
-        pyramid1.Draw();
+        pyramid1.Draw(model_speed_keyboard);
         cube1.SetParentModelMatrix(sphere1.GetModelMatrix());
-        cube1.Draw();
+        cube1.Draw(model_speed_keyboard);
 
         sphere2.SetParentModelMatrix(pyramid1.GetModelMatrix());
-        sphere2.Draw();
+        sphere2.Draw(model_speed_keyboard,0,0);
         cube2.SetParentModelMatrix(pyramid1.GetModelMatrix());
-        cube2.Draw();
+        cube2.Draw(model_speed_keyboard);
 
         pyramid2.SetParentModelMatrix(cube1.GetModelMatrix());
-        pyramid2.Draw();
+        pyramid2.Draw(model_speed_keyboard);
         cube3.SetParentModelMatrix(cube1.GetModelMatrix());
-        cube3.Draw();
+        cube3.Draw(model_speed_keyboard);
 
         /////////////////////////////////////////////////
 
         line1.SetParentModelMatrix(sphere1.GetModelMatrix());
-        line1.Draw();
+        line1.Draw(model_speed_keyboard);
 
         line2.SetParentModelMatrix(pyramid1.GetModelMatrix());
-        line2.Draw();
+        line2.Draw(model_speed_keyboard);
 
         line3.SetParentModelMatrix(cube1.GetModelMatrix());
-        line3.Draw();
+        line3.Draw(model_speed_keyboard);
 
         line4.SetParentModelMatrix(pyramid1.GetModelMatrix());
-        line4.Draw();
+        line4.Draw(model_speed_keyboard);
 
         line5.SetParentModelMatrix(cube1.GetModelMatrix());
-        line5.Draw();
+        line5.Draw(model_speed_keyboard);
 
         line6.SetParentModelMatrix(sphere2.GetModelMatrix());
-        line6.Draw();
+        line6.Draw(model_speed_keyboard);
 
         line7.SetParentModelMatrix(cube2.GetModelMatrix());
-        line7.Draw();
+        line7.Draw(model_speed_keyboard);
 
         line8.SetParentModelMatrix(pyramid2.GetModelMatrix());
-        line8.Draw();
+        line8.Draw(model_speed_keyboard);
 
         line9.SetParentModelMatrix(cube3.GetModelMatrix());
-        line9.Draw();
+        line9.Draw(model_speed_keyboard);
 
         line10.SetParentModelMatrix(line1.GetModelMatrix());
-        line10.Draw();
+        line10.Draw(model_speed_keyboard);
 
         line11.SetParentModelMatrix(line2.GetModelMatrix());
-        line11.Draw();
+        line11.Draw(model_speed_keyboard);
 
         line12.SetParentModelMatrix(line3.GetModelMatrix());
-        line12.Draw();
+        line12.Draw(model_speed_keyboard);
 
         /////////////////////////////////////////////
 
