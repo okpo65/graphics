@@ -129,7 +129,7 @@ static void KeyboardCallback(GLFWwindow *a_window, int a_key, int a_scancode, in
                 }
                 break;
             case GLFW_KEY_R:
-                model_speed_keyboard = 1.0f;    
+                model_speed_keyboard = 1.0f;
                 break;
             case GLFW_KEY_UP:
                 model_transfer_direction = 0;
@@ -311,7 +311,7 @@ int main(void) {
 
 
     ////////////////////////////////////////////////////
-
+    // define auxiliary frame lines
 
     Model line1 = Model();
     Model line2 = Model();
@@ -340,6 +340,7 @@ int main(void) {
     lines.push_back(&line11);
     lines.push_back(&line12);
 
+    //initiate line models
     for(int i=0;i<12;i++){
         InitDataCube(*lines[i], vec3(0.0f, 1.0f, 0.0f));
         (*lines[i]).InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
@@ -384,7 +385,7 @@ int main(void) {
         cube3.Draw(model_speed_keyboard);
 
         /////////////////////////////////////////////////
-
+        // draw auxiliary frame lines
         line1.SetParentModelMatrix(sphere1.GetModelMatrix());
         line1.Draw(model_speed_keyboard);
 

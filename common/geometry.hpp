@@ -164,6 +164,7 @@ void InitDataSphere(Model &a_model, vec3 a_color)
 	// Reference: Four ways to create a mesh for a sphere
 	// https://medium.com/game-dev-daily/four-ways-to-create-a-mesh-for-a-sphere-d7956b825db4
 }
+//make pyramid
 void InitDataTriangle(Model &a_model, vec3 a_color)
 {
 

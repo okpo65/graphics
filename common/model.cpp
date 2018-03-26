@@ -19,7 +19,9 @@ Model::Model()
 	m_indices = vector<unsigned int>();
 	m_normals = vector<vec3>();
 	m_colors = vector<vec3>();
+    //save my ModelMatrix
 	m_model_matrix = glm::mat4();
+    //save my parent's ModelMatrix
 	m_parent_model_matrix = glm::mat4();
 }
 Sphere::Sphere()
@@ -92,11 +94,12 @@ void Model::SetModelId(unsigned int p_model_id)
 {
 	m_model_id = p_model_id;
 }
-
+//get my ModelMatrix
 mat4 Model::GetModelMatrix()
 {
 	return m_model_matrix;
 }
+//get my Parent's ModelMatrix
 void Model::SetParentModelMatrix(mat4 model_matrix)
 {
 	m_parent_model_matrix = model_matrix;
@@ -128,7 +131,7 @@ void Model::InitializeGLSL(DRAW_TYPE a_draw_type, const char * a_vertex_shader_p
 	glBindBuffer(GL_ARRAY_BUFFER, m_color_buffer_id);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vec3)*m_colors.size(), &m_colors[0], GL_STATIC_DRAW);
 }
-
+// add parameter model_speed_keyboard to regulate model's speed
 void Model::Draw(float model_speed_keyboard)
 {
 	glUseProgram(m_glsl_program_id);
@@ -145,7 +148,7 @@ void Model::Draw(float model_speed_keyboard)
 
 	lastFrameTime = currentTime;
 
-
+    // rotate model with eular axis
 	gOrientation1.y += 3.14159f/2.0f * (deltaTime * model_speed_keyboard);
 	// Build the model matrix
 	glm::mat4 RotationMatrix = eulerAngleYXZ(gOrientation1.y, gOrientation1.x, gOrientation1.z);
@@ -180,6 +183,7 @@ void Model::Draw(float model_speed_keyboard)
 			break;
 
 		default:
+            // draw line models (deform and modify cube model with scaleMatrix)
             ScaleMatrix = glm::scale(0.05f, 0.8f ,0.05f);
 
             if (m_model_id <= 9){
@@ -190,7 +194,7 @@ void Model::Draw(float model_speed_keyboard)
                 m_model_matrix = TransformMatrix;
             }else{
                 if(m_model_id == 16) {
-                    ScaleMatrix = glm::scale(6.3f, 0.2f ,0.2f);
+                    ScaleMatrix = glm::scale(6.3f, 0.2f ,0.3f);
                 }else{
                     ScaleMatrix = glm::scale(3.3f, 0.2f ,0.2f);
                 }
@@ -394,7 +398,7 @@ void Sphere::cleanup()
     glDeleteBuffers(4,sphere_vbo);
 }
 
-
+//add parameter model_transfer_keyboard and model_transfer_direction to transfer model's location
 void Sphere::Draw(float model_speed_keyboard, float model_transfer_keyboard[2], float model_transfer_direction)
 {
 	glUseProgram(m_sphereProgramID);
@@ -410,6 +414,7 @@ void Sphere::Draw(float model_speed_keyboard, float model_transfer_keyboard[2], 
 
 	lastFrameTime = currentTime;
 
+    // rotate model with eular axis
     gOrientation1.y += 3.14159f/2.0f * (deltaTime * model_speed_keyboard) ;
 
 
@@ -422,6 +427,7 @@ void Sphere::Draw(float model_speed_keyboard, float model_transfer_keyboard[2], 
 	switch (s_model_id)
 	{
 		case 0:
+            //top parent model
 			scalingMatrix = glm::scale(0.1f, 0.1f ,0.1f);
 			TransformMatrix = glm::translate(glm::mat4(), glm::vec3(model_transfer_keyboard[1], 8.0f + model_transfer_keyboard[0], 0.0f));
 			ModelMatrix =  TransformMatrix * RotationMatrix * scalingMatrix;
